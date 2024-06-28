@@ -1,70 +1,8 @@
-  .toolbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #1976d2;
-    color: white;
-    font-weight: 600;
-  }
-  .toolbar img {
-    margin-left: 10px;
-    width: 40;
-  }
-  .toolbar input {
-    margin-right: 10px;
-    width: 40;
-  }
-
-
-
-
-  .header{
-    margin: 1%;
-    border: black solid 1px;
-  }
-  .title{
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-    color: black;
-  }
-  .searchbar{
-    display: flex;
-    align-items: center;
-    margin: 1%;
-  }
-  .searchbar button{
-    background-color: #1976d2;
-    color: white;
-    border: none;
-    padding: 5px;
-    margin-left: 5px;
-  }
-
-
-  
-  .content{
-    margin: 1%;
-  }
-  .info{
-    margin: 1%;
-    display: inline-block;
-    border: gray 1px solid;
-    width: 10%;
-    border-radius: 10px;
-  }
-  .pokemonImg{
-    width: 40;
-    align-items: center;
-  }
-  .pokemonInfo{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 1%;
-  }
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

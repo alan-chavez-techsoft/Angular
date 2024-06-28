@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { PokemonEntity } from './entities/pokemonEntity';
-import { NgFor } from '@angular/common';
-
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-root',
-  standalone: false,
-  templateUrl: './app.component.html',
+  standalone: true,
+  imports: [RouterModule],
+  template: `
+  <router-outlet></router-outlet>
+  `,
   styleUrl: './app.component.css'
 })
 export class AppComponent {
