@@ -11,6 +11,7 @@ import { PokemonService } from '../../../../../shared/services/pokemon.service';
     <div *ngFor="let pokemon of pokemonsList">
       <img width="80" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ pokemon.detail.id }}.png" />
       <h3>{{ pokemon.name | pokename }}</h3> 
+      <a [routerLink]="[pokemon.detail.id]">Details</a> 
     </div>  
   </div>
   `,

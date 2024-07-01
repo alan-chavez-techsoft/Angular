@@ -15,13 +15,11 @@ export class PokenamePipe implements PipeTransform {
     {ingles:"Eevee",japo:"Uibui"}];  
 
   transform(value: string): string {
-    this.pokesJaponeses.map((p)=>{
-      if(p.ingles === value){
-        return p.japo;
-      }
-      return p.ingles;
-    })
-    return null;
+    var japoName = this.pokesJaponeses.find(p=> value.toLowerCase() === p.ingles.toLowerCase())
+    if(japoName!=null){
+      return japoName.japo
+    }
+    return value.charAt(0).toUpperCase() + value.slice(1);
   }
 
 }
