@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonEntity } from '../../../../entities/pokemonEntity';
-import { pokemons } from '../../../../../shared/const/pokeConst';
 import { PokemonService } from '../../../../../shared/services/pokemon.service';
 
 @Component({

@@ -10,13 +10,11 @@ export const routes: Routes = [
         children: [
             {
                 path: '',
-                component: PokedexListComponent,
-                children: [
-                    {
-                        path: ':pokemonId',
-                        component: PokedexDetailComponent
-                    }
-                ]
+                component: PokedexListComponent
+            },
+            {
+                path: ':pokemonId',
+                component: PokedexDetailComponent
             }
         ]
     }
