@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { PokemonEntity } from '../../../../entities/pokemonEntity';
 import { PokemonService } from '../../../../../shared/services/pokemon.service';
 
@@ -7,11 +7,17 @@ import { PokemonService } from '../../../../../shared/services/pokemon.service';
   standalone: false,
   template: `
     <div class="content">
-    <div *ngFor="let pokemon of pokemonsList">
-      <img width="80" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ pokemon.detail.id }}.png" />
-      <h3>{{ pokemon.name | pokename }}</h3> 
-      <a [routerLink]="[pokemon.detail.id]">Details</a> 
-    </div>  
+      <div class="filterbox" fxFlex="60">
+        <label>Buscar</label>
+        <input #autofocus [(ngModel)]="filterValue">
+      </div>
+      @for(pokemon of pokemonsList | filter: filterValue; track pokemon.name){
+        <div class="pokemon-card">
+          <img width="80" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ pokemon.detail.id }}.png" />
+          <h3>{{ pokemon.name | pokename }}</h3> 
+          <a [routerLink]="[pokemon.detail.id]">Details</a> 
+        </div>  
+      }
   </div>
   `,
   styleUrl: './pokedex-list.component.css'
@@ -19,7 +25,9 @@ import { PokemonService } from '../../../../../shared/services/pokemon.service';
 export class PokedexListComponent implements OnInit{
   title = 'pokedex';
   pokemonsList:PokemonEntity[];
-
+  filterValue: string = '';
+  @ViewChild('autofocus') autofocus: ElementRef;
+  
   constructor(private pokemonService: PokemonService) {}
 
   ngOnInit(): void {

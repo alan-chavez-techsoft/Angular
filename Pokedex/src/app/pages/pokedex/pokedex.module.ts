@@ -5,6 +5,7 @@ import { PokedexComponent } from './pokedex.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './pokedex.routes';
 import { SharedModule } from '../../../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -13,6 +14,7 @@ import { SharedModule } from '../../../shared/shared.module';
   imports: [
     CommonModule,
     SharedModule,
+    FormsModule,
     RouterModule.forChild(routes)
   ],
   bootstrap: [PokedexComponent]

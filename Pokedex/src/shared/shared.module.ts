@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { HoverDirective } from './directives/hover.directive';
 import { PokemonTypeDirective } from './directives/pokemon-type.directive';
 import { PokemonService } from './services/pokemon.service';
-import { PokenamePipe } from './pipe/pokename.pipe';
+import { PokenamePipe } from './pipe/pokename/pokename.pipe';
+import { PokemonFilterPipe } from './pipe/pokemon-filter/pokemon-filter.pipe';
 
 @NgModule({
-  declarations: [HoverDirective, PokemonTypeDirective,PokenamePipe],
+  declarations: [HoverDirective, PokemonTypeDirective,PokenamePipe, PokemonFilterPipe],
   imports: [CommonModule],
-  exports: [HoverDirective, PokemonTypeDirective, PokenamePipe],
+  exports: [HoverDirective, PokemonTypeDirective, PokenamePipe, PokemonFilterPipe],
   providers: [PokemonService]
 })
 export class SharedModule {
