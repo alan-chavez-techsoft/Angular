@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { routes } from './pokedex.routes';
 import { SharedModule } from '../../../shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     SharedModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forChild(routes)
   ],
   bootstrap: [PokedexComponent]

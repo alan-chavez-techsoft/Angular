@@ -1,0 +1,68 @@
+.pokemon-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .pokemon-image {
+    width: 200px;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 50%; // Make the image round
+    overflow: hidden; // Ensure the image does not overflow its container
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); // Add shadow for depth
+    transition: transform 0.3s ease; // Smooth transition for hover effect
+
+    img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease; // Ensure the image scales smoothly on hover
+    }
+
+    &:hover {
+      transform: scale(1.05); // Slightly enlarge on hover
+
+      img {
+        transform: rotate(10deg); // Rotate image for dynamic effect
+      }
+    }
+  }
+
+  .stats {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+    p {
+      margin: 10px 0;
+      color: #333; // Darker text for better readability
+      font-weight: bold; // Make the text bold
+    }
+  }
+
+  // Additional styles for abilities, moves, and types
+  .pokemon-abilities, .pokemon-moves, .pokemon-types {
+    margin: 20px 0;
+
+    h2 {
+      color: #007bff; // Theme color for headings
+    }
+
+    ul {
+      list-style-type: none; // Remove default list styling
+      padding: 0;
+
+      li {
+        background-color: #e9ecef; // Light background for each item
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 5px; // Rounded corners for list items
+
+        &:hover {
+          background-color: #dde; // Change background on hover for interactivity
+        }
+      }
+    }
+  }
+}
