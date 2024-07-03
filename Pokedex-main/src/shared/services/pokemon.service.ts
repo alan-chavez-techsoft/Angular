@@ -5,7 +5,7 @@ import { PokemonAPIResponse, PokemonEntity } from "../../app/entities/pokemonEnt
 const baseUrl:string = "https://pokeapi.co/api/v2/pokemon";
 const offset = 100;
 
-Injectable({
+@Injectable({
     providedIn: 'root'
 })
 

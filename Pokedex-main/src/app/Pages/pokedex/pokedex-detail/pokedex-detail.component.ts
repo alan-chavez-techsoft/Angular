@@ -1,6 +1,4 @@
-import { pokemons } from '../../../../shared/const/pokeConst';
 import { Component, OnInit } from '@angular/core';
-import { PokemonEntity } from '../../../entities/pokemonEntity';
 import { PokemonService } from '../../../../shared/services/pokemon.service';
 import { ActivatedRoute } from '@angular/router';
 

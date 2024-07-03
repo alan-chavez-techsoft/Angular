@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -6,16 +6,8 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-  <ul>
-  <!-- @for(item of indices; track item){ -->
-    <li *ngFor="let item of items">
-      <span>{{item.index}}</span> {{item.index}}
-    </li>
-  <!-- } -->
-  </ul>
   `,
   styleUrl: './list.component.scss'
 })
-export class ListComponent {
-  @Input() items: any[] = [];
+export class ListComponent{
 }
