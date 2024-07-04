@@ -34,6 +34,15 @@ export class AuthService {
         return of(false);
     }
 
+    getUserRole():Observable<string>{
+        const userInfoString = sessionStorage.getItem('userInfo');
+        if(userInfoString){
+            const userInfo = JSON.parse(userInfoString);
+            return of(userInfo.role);
+        }
+        return of('defaultRole');
+    }
+
     login(email:String, password:String):Observable<boolean>{
         let findedUser = this.users.find(u => u.email.toLocaleLowerCase() === email.toLocaleLowerCase() 
         && u.password.toLocaleLowerCase() === password.toLocaleLowerCase());
@@ -42,5 +51,9 @@ export class AuthService {
             return of(true);
         }
         return of(false);
+    }
+
+    logout(){
+        sessionStorage.removeItem('userInfo');
     }
 }
