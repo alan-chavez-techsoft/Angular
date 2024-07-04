@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../../../../shared/services/pokemon.service';
 import { PokemonEntity } from '../../../entities/pokemonEntity';
+import { forkJoin, map, mergeMap } from 'rxjs';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -22,5 +23,12 @@ export class PokemonListComponent implements OnInit{
       });
       this.pokemonsList = p.results;
     });
+
+    this.pokeservice.getAll().pipe(map(response=>{
+      response.results.forEach((pokemon) => {
+        this.pokeservice.getPokemonDetails(pokemon.url).subscribe(d => pokemon.detail = d)
+      })
+      return response.results;
+    })).subscribe(p => this.pokemonsList = p);
   }
 }

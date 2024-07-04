@@ -15,7 +15,6 @@ export class AuthCallbackComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 
   checkSession(){
@@ -23,5 +22,6 @@ export class AuthCallbackComponent implements OnInit{
     if(this.isLogged){
       this.router.navigate(['']);
     }
+    this.router.navigate(['login']);
   }
 }

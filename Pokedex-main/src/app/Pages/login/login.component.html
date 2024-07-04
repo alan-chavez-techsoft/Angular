@@ -1,1 +1,14 @@
-<p>login works!</p>
+<div>
+    <form>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input [(ngModel)]="email"
+            [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+        </div>
+        <button (click)="login()" class="btn btn-primary">Submit</button>
+    </form>
+</div>

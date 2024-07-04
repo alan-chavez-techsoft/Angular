@@ -20,7 +20,7 @@ export class PokemonService {
     // }
 
     public getAll(){
-      return this.http.get<any>(`${baseUrl}?limit=${offset}`);
+      return this.http.get<PokemonAPIResponse>(`${baseUrl}?limit=${offset}`);
     }
 
     public getPokemonDetails(url:string){

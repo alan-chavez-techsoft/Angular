@@ -8,6 +8,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { ToolbarComponent } from '../../shared/components/toolbar/toolbar.component';
 import { AuthCallbackComponent } from './auth-callback/auth-callback.component';
 import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [PagesComponent, ShellComponent, AuthCallbackComponent, LoginComponent],
@@ -15,6 +16,7 @@ import { LoginComponent } from './login/login.component';
     CommonModule,
     SharedModule,
     ToolbarComponent,
+    FormsModule,
     RouterModule.forChild(routes)
   ],
   bootstrap: [PagesComponent]
