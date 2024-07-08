@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { PokemonEntity } from '../../../entities/pokemonEntity';
+import { PokemonEntity } from '../../../entities/pokemonEntity/pokemonEntity';
 import { PokemonService } from '../../../../shared/services/pokemon.service';
 import { Router } from '@angular/router';
 

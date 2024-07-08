@@ -1,7 +1,8 @@
 import { Injectable, inject } from "@angular/core";
 import { pokemons } from "../const/pokeConst";
 import { HttpClient } from "@angular/common/http";
-import { PokemonAPIResponse, PokemonEntity } from "../../app/entities/pokemonEntity";
+import { PokemonEntity } from "../../app/entities/pokemonEntity/pokemonEntity";
+import { PokemonAPIResponse } from "../../app/entities/pokemonAPIResponse";
 const baseUrl:string = "https://pokeapi.co/api/v2/pokemon";
 const offset = 100;
 

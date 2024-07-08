@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { PokemonEntity } from './entities/pokemonEntity';
+import { PokemonEntity } from './entities/pokemonEntity/pokemonEntity';
 
 @Component({
   selector: 'app-root',

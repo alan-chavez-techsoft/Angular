@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../../../../shared/services/pokemon.service';
-import { PokemonEntity } from '../../../entities/pokemonEntity';
+import { PokemonEntity } from '../../../entities/pokemonEntity/pokemonEntity';
 import { forkJoin, map, mergeMap } from 'rxjs';
 
 @Component({

@@ -1,4 +1,4 @@
-import { PokemonEntity } from "../../app/entities/pokemonEntity";
+import { PokemonEntity } from "../../app/entities/pokemonEntity/pokemonEntity";
 
 export const pokemons: PokemonEntity[] = [
     {
