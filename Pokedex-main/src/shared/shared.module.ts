@@ -6,11 +6,13 @@ import { PokemonService } from './services/pokemon.service';
 import { PokenamePipe } from './pipe/pokedex/pokename.pipe';
 import { PokemonFilterPipe } from './pipe/pokedex/pokemonfilter.pipe';
 import { AuthService } from './services/auth.service';
+import { SearchBarComponent } from './components/search-bar/search-bar/search-bar.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [HoverDirective, PokemonTypeDirective, PokenamePipe, PokemonFilterPipe],
-  imports: [CommonModule],
-  exports: [HoverDirective, PokemonTypeDirective, PokenamePipe, PokemonFilterPipe],
+  declarations: [HoverDirective, PokemonTypeDirective, PokenamePipe, PokemonFilterPipe, SearchBarComponent],
+  imports: [CommonModule, FormsModule],
+  exports: [HoverDirective, PokemonTypeDirective, PokenamePipe, PokemonFilterPipe, SearchBarComponent],
   providers: [PokemonService, AuthService]
 })
 export class SharedModule {

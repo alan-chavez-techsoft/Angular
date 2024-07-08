@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { MenuService } from '../../services/menu.service';
@@ -17,7 +17,7 @@ import { MenuOptions } from '../../../app/entities/menuOptions';
   `,
   styleUrl: './menu.component.scss'
 })
-export class MenuComponent {
+export class MenuComponent implements OnInit{
   constructor(private route:Router,private auth:AuthService, private menu:MenuService) {}
   userRole:string = '';
   menuOptionsToShow:MenuOptions[] = [];

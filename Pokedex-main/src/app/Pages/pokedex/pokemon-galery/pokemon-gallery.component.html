@@ -3,10 +3,7 @@
   <h2>Pokedex</h2>
 
   <div class="spacer"></div>
-  <div class="filterBox" fxFlex="60">
-    <label>Buscar</label>
-    <input [(ngModel)]="filterValue">
-  </div>
+  <app-search-bar (filterValueEvent)="filterExpression($event)"></app-search-bar>
   <div class="pokemon-gallery">
     <!-- <div *ngFor="let pokemon of pokemons" class="pokemon-card" > -->
 
