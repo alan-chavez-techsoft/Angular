@@ -1,0 +1,18 @@
+<div class="content">
+    <ul>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+            @for(pokemon of pokemonsList; track pokemon.name){
+            <tr>
+                <td>{{pokemon.detail.id}}</td>
+                <td>{{pokemon.name}}</td>
+                <td>{{pokemon.detail.height}}</td>
+                <td>{{pokemon.detail.weight}}</td>
+            </tr>
+            }
+        </table>
+    </ul>
+</div>

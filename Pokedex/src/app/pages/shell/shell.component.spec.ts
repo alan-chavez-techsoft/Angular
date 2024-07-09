@@ -11,7 +11,7 @@ describe('ShellComponent', () => {
       imports: [ShellComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(ShellComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

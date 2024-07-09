@@ -1,0 +1,18 @@
+<div class="pokemon-details">
+  <div class="pokemon-image">
+    <img src="{{currentPokemon?.detail?.sprites?.front_default}}" alt="Image of {{currentPokemon?.name}}">
+  </div>
+  <div class="stats">
+    <p><strong>Height:</strong> {{currentPokemon?.detail?.height}}</p>
+    <p><strong>ID:</strong> {{currentPokemon?.detail?.id}}</p>
+    <p><strong>Weight:</strong> {{currentPokemon?.detail?.weight}}</p>
+    <div class="pokemon-types">
+      <h2>Types</h2>
+      <ul>
+        <li *ngFor="let type of currentPokemon?.detail?.types">
+          {{type.type.name}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

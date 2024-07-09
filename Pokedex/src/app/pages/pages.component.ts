@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   template: `
   <router-outlet></router-outlet>
   `,
-  styleUrl: './pages.component.css'
+  styleUrl: './pages.component.scss'
 })
 export class PagesComponent {
 

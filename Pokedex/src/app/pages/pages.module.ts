@@ -3,17 +3,20 @@ import { CommonModule } from '@angular/common';
 import { PagesComponent } from './pages.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './pages.routes';
-import { ShellComponent } from './shell/shell.component';
+import { ShellComponent } from './Shell/shell.component';
+import { SharedModule } from '../../shared/shared.module';
 import { ToolbarComponent } from '../../shared/components/toolbar/toolbar.component';
-import { PokedexModule } from './pokedex/pokedex.module';
-
-
+import { AuthCallbackComponent } from './auth-callback/auth-callback.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [PagesComponent, ShellComponent],
+  declarations: [PagesComponent, ShellComponent, AuthCallbackComponent, LoginComponent],
   imports: [
     CommonModule,
+    SharedModule,
     ToolbarComponent,
+    FormsModule,
     RouterModule.forChild(routes)
   ],
   bootstrap: [PagesComponent]

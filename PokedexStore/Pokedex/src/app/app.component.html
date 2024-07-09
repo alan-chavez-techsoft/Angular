@@ -1,0 +1,33 @@
+<div class="toolbar">
+  <img alt="PokedexLogo" src="https://icon-library.com/images/pokedex-icon/pokedex-icon-16.jpg" width="60" />
+  <h1>My Pokedex</h1>
+
+</div>
+
+<div class="content">
+  <h2>La Pokedex de Jose Antonio Rivera Romo y Copilot</h2>
+  <div class="spacer"></div>
+  <div class="pokemon-gallery">
+
+    <div *ngFor="let pokemon of pokemons" class="pokemon-card" >
+
+      <div appHover>
+        <div class="pokemon-image">
+          <img src="{{pokemon.detail.sprites.front_default}}" alt="pokemonIMG"/>
+        </div>
+
+        <div class="pokemon-details">
+          <div class="pokemon-id">{{pokemon.detail.id}}</div>
+          <div class="pokemon-name">{{pokemon.name}}</div>
+          <div *ngFor="let type of pokemon.detail.types">
+                    <div class="pokemon-type1" [appPokemonType]="type.type.name">{{type.type.name}}</div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

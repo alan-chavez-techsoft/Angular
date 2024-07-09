@@ -4,9 +4,9 @@ import { Component } from '@angular/core';
   selector: 'app-shell',
   standalone: false,
   templateUrl: './shell.component.html',
-  styleUrl: './shell.component.css'
+  styleUrl: './shell.component.scss'
 })
 export class ShellComponent {
-  title = 'Pokedex';
-  img = 'https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-1701527825902nvf7o.png';
+  title:string = 'Pokedex';
+
 }

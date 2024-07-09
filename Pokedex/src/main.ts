@@ -1,9 +1,12 @@
-import { bootstrapApplication, platformBrowser } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
+// import { platformBrowser } from '@angular/platform-browser';
+// import { AppModule } from './app/app/app.module';
+
+// platformBrowser().bootstrapModule(AppModule).catch(err=>console.error(err))
+
 import { AppComponent } from './app/app.component';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { appConfig } from './app/app.config';
 
 bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
-
-//platformBrowserDynamic().bootstrapModule(AppModule)
-  //.catch(err => console.error(err));
+   .catch((err) => console.error(err));
+ 

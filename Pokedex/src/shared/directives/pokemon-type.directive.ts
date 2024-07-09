@@ -1,13 +1,14 @@
-import { Directive, HostBinding, Input, OnInit } from '@angular/core';
+import { Directive, HostBinding, OnInit, Input } from '@angular/core';
 
 @Directive({
   selector: '[appPokemonType]',
   standalone: false
 })
-export class PokemonTypeDirective implements OnInit {
-  @Input() appPokemonType: string ="";
-  @HostBinding('style.backgroundColor') bgColor: string = 'none';
+export class PokemonTypeDirective implements OnInit{
 
+  // constructor() { }
+  @Input() appPokemonType : any ="";
+  @HostBinding('style.background-Color') bgColor:string = 'none'
   typeColors: { [key: string]: string } = {
     fire: '#F08030',
     water: '#6890F0',
@@ -21,11 +22,11 @@ export class PokemonTypeDirective implements OnInit {
     fighting: '#C03028',
     steel: '#B8B8D0',
     ground: '#E0C068',
-    bug: '#A8B820',
+    bug: '#4BD114'
   };
-  constructor() { }
 
-  ngOnInit(): void {
-      this.bgColor = this.typeColors[this.appPokemonType];
+  ngOnInit(): void{
+    this.bgColor = this.typeColors[this.appPokemonType];
   }
+
 }

@@ -1,19 +1,15 @@
 import { Routes } from '@angular/router';
-import { ShellComponent } from './shell/shell.component';
+import { ShellComponent } from './Shell/shell.component';
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
-    {    
+    {
         path: '',
         component: ShellComponent,
         children: [
             {
-                path:'',
-                redirectTo:'pokemon-list',
-                pathMatch:'full'
-            },
-            {
-                path: 'pokemon-list',
-                loadChildren: () => import('../pages/pokedex/pokedex.module').then(m => m.PokedexModule)
+                path: '',
+                loadChildren: () => import('./pokedex/pokedex.module').then(m => m.PokedexModule)
             }
         ]
     }

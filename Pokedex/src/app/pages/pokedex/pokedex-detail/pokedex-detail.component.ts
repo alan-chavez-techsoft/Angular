@@ -1,29 +1,27 @@
-import { Component } from '@angular/core';
-import { PokemonEntity } from '../../../entities/pokemonEntity';
+import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../../../../shared/services/pokemon.service';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pokedex-detail',
-  standalone: true,
-  imports: [RouterModule],
-  template: `
-  <div class="pokedex-detail">
-    <img width="120" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ pokemon.detail.id }}.png" />
-    <h1>{{pokemon.name}}</h1>
-    <h2>{{pokemon.detail.id}}</h2>
-    <h3>{{pokemon.detail.height}}</h3>
-    <h3>{{pokemon.detail.weight}}</h3>
-    <a [routerLink]="['']">Volver</a>  
-  </div>
-  `,
-  styleUrl: './pokedex-detail.component.css'
+  standalone: false,
+  templateUrl: './pokedex-detail.component.html',
+  styleUrl: './pokedex-detail.component.scss'
 })
-export class PokedexDetailComponent {
-  pokemon: PokemonEntity;
-  constructor(private pokemonService: PokemonService, private route: ActivatedRoute) {}
+export class PokedexDetailComponent implements OnInit{
+  pokemonId:number = 0;
+  currentPokemon: any | undefined;
 
+  constructor(private pokeservice: PokemonService,private route: ActivatedRoute) {}
   ngOnInit(): void {
-    this.pokemon = this.pokemonService.getPokemon(parseInt(this.route.snapshot.paramMap.get('pokemonId')));
+    this.pokemonId = Number(this.route.snapshot.paramMap.get('id'));
+
+    this.pokeservice.getbyId(this.pokemonId).subscribe(p =>{this.currentPokemon = p
+      console.log(this.currentPokemon)
+    });
+
+    // if (!this.currentPokemon) {
+    //   console.error('Pokémon not found');
+    // }
   }
 }

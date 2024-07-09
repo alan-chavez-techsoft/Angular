@@ -1,0 +1,36 @@
+<div class="content">
+
+  <h2>Pokedex</h2>
+
+  <div class="spacer"></div>
+  <app-search-bar (filterValueEvent)="filterExpression($event)"></app-search-bar>
+  <div class="pokemon-gallery">
+    <!-- <div *ngFor="let pokemon of pokemons" class="pokemon-card" > -->
+
+
+      @for(pokemon of pokemonsList | filter: filterValue ; track pokemon.name){
+
+        <div appHover class="pokemon-card" (click)="redirectToDetails(pokemon.detail.id)">
+
+          <div class="pokemon-image">
+            <img src="{{pokemon.detail.sprites.front_default}}" alt="pokemonIMG"/>
+          </div>
+
+          <div class="pokemon-details">
+            <div class="pokemon-id">{{pokemon.detail.id}}</div>
+
+            <div class="pokemon-name">{{pokemon.name | pokename}}</div>
+
+            <div *ngFor="let type of pokemon.detail.types">
+              <div class="pokemon-type1" [appPokemonType]="type.type.name">{{type.type.name}}</div>
+            </div>
+          </div>
+
+        </div>
+
+      }
+
+    <!-- </div> -->
+  </div>
+
+</div>
