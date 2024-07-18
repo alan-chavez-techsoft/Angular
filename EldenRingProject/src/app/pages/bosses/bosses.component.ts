@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-pokedex',
+  selector: 'app-bosses',
   standalone: false,
   template: `
   <router-outlet></router-outlet>
   `,
-  styleUrl: './pokedex.component.scss'
+  styleUrl: './bosses.component.css'
 })
-export class PokedexComponent {
+export class BossesComponent {
 
 
 }

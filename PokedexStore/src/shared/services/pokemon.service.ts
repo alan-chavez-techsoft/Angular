@@ -14,24 +14,12 @@ export class PokemonService {
     pokemonList:PokemonEntity[] = pokemons;
     private http = inject(HttpClient);
 
-    // constructor(private htp: HttpClient) { }
-
-    // public getAll() {
-    //     return this.pokemonList;
-    // }
-
     public getAll(){
       return this.http.get<PokemonAPIResponse>(`${baseUrl}?limit=${offset}`);
     }
-
     public getPokemonDetails(url:string){
       return this.http.get<any>(url);
     }
-
-    // public getbyId(id: number) {
-    //   return this.pokemonList.find(pokemon => pokemon.detail.id === id);
-    // }
-
     public getbyId(id: number) {
       return this.http.get<PokemonAPIResponse>(`${baseUrl}/${id}`);
     }

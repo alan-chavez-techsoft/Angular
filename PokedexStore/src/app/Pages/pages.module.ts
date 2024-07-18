@@ -9,7 +9,6 @@ import { ToolbarComponent } from '../../shared/components/toolbar/toolbar.compon
 import { AuthCallbackComponent } from './auth-callback/auth-callback.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
-import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [PagesComponent, ShellComponent, AuthCallbackComponent, LoginComponent],

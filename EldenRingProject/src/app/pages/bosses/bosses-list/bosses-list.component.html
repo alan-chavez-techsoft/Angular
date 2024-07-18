@@ -1,0 +1,10 @@
+<div>
+    <h1>Bosses</h1>
+    @for (boss of bossesList; track boss.name) {
+        <div>
+            <h2>{{ boss.name }}</h2>
+            <p>{{ boss.description }}</p>
+            <img src="{{ boss.image }}" alt="{{ boss.name }}">
+        </div>
+    }
+</div>
